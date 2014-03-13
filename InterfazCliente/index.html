@@ -10,6 +10,7 @@
     <script type="text/javascript" src="js/lib/knockout-2.1.0.js"></script>
     <script type="text/javascript" src="js/lib/knockout.mapping.js"></script>
 
+    <!-- FOUNDATION -->
     <link rel="stylesheet" href="css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
 
@@ -18,7 +19,7 @@
 
   
     
-	<title>Cosa</title>
+  <title>Farmacia</title>
 
 </head>
 
@@ -29,30 +30,42 @@
   <!--   <ul class="folders" data-bind="foreach: folders">
       <li><button data-bind="text: $data, click:formu"></button></li>
     </ul> -->
-    
+  
+  <!-- Menu con botones -->
   <ul class="menu">
-    <li><button data-bind="click: home">Home</button></li>
-    <li><button data-bind="click: formu">Nuevo Cliente</button></li>
-    <li><button data-bind="click: logIn">Log In</button></li>
+    <button data-bind="click: home">Home</button>
+    <button data-bind="click: formu">Nuevo Cliente</button>
+    <button data-bind="click: logIn">Log In</button>
   </ul>
 
-  <nav class="top-bar" data-topbar>
+<!--   <nav class="top-bar" data-topbar>
     <ul class="folders" data-bind="foreach: folders" >
-      <li>Holi</li>
+      <li data-bind="text: folders"></li>
     </ul>
-  </nav>
+  </nav> -->
 
 
-
+    <!-- Página principal -->
     <div data-bind="visible: pagina()== 'home'">
       <p>Esto es el menu</p>
       <button data-bind="click: formu">Ir al formulario</button>
     </div>
 
-
+    <!-- Página para introducir el TSI del cliente -->
     <div data-bind="visible: pagina()=='formulario' ">
-      <p>Introduzca a continuación el TSI del cliente: </p>
+      <form>
+        <label>Introduzca a continuación el TSI del cliente: 
+          <input type="text" placeholder="TSI" />
+          <button data-bind="click: listaCliente">Aceptar</button>
+        </label>
     </div>
+
+
+    <!-- Página que enseña los medicamentos recetados por el médico -->
+    <div data-bind="visible: pagina()=='listacliente'">
+      <p>Holi cliente</p>
+    </div>
+
   </div>
 
 </body>

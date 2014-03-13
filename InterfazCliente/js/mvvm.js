@@ -11,6 +11,9 @@ function AppViewModel() {
     self.home = function(){
     	self.pagina('home');
     }
+   self.listaCliente = function(){
+      self.pagina('login');
+    }
 }
   $(document).ready(function() {
     ko.applyBindings(new AppViewModel());
