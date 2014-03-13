@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8">
+
+    <!-- javascript libs-->
+    <script type="text/javascript" src="js/lib/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="js/lib/jquery-ui-1.9.2.custom.min.js"></script>
+    <script type="text/javascript" src="js/lib/knockout-2.1.0.js"></script>
+    <script type="text/javascript" src="js/lib/knockout.mapping.js"></script>
+
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/vendor/modernizr.js"></script>
+
+   
+    <script type="text/javascript" src="js/mvvm.js"></script>
+
+  
+    
+	<title>Cosa</title>
+
+</head>
+
+<body>
+  <div class="grid flex">
+    <h1 style="text-align:center;">Receta Farmaceútica</h1>
+
+  <!--   <ul class="folders" data-bind="foreach: folders">
+      <li><button data-bind="text: $data, click:formu"></button></li>
+    </ul> -->
+    
+  <ul class="menu">
+    <li><button data-bind="click: home">Home</button></li>
+    <li><button data-bind="click: formu">Nuevo Cliente</button></li>
+    <li><button data-bind="click: logIn">Log In</button></li>
+  </ul>
+
+  <nav class="top-bar" data-topbar>
+    <ul class="folders" data-bind="foreach: folders" >
+      <li>Holi</li>
+    </ul>
+  </nav>
+
+
+
+    <div data-bind="visible: pagina()== 'home'">
+      <p>Esto es el menu</p>
+      <button data-bind="click: formu">Ir al formulario</button>
+    </div>
+
+
+    <div data-bind="visible: pagina()=='formulario' ">
+      <p>Introduzca a continuación el TSI del cliente: </p>
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+
+
+
+
