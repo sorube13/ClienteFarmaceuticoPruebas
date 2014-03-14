@@ -27,49 +27,100 @@
   <div class="grid flex">
     <h1 style="text-align:center;">Receta Farmaceútica</h1>
 
-  <!--   <ul class="folders" data-bind="foreach: folders">
+      <!--   <ul class="folders" data-bind="foreach: folders">
       <li><button data-bind="text: $data, click:formu"></button></li>
-    </ul> -->
+      </ul> -->
   
-  <!-- Menu con botones -->
-  <ul class="menu">
-    <button data-bind="click: home">Home</button>
-    <button data-bind="click: formu">Nuevo Cliente</button>
-    <button data-bind="click: logIn">Log In</button>
-  </ul>
-
-<!--   <nav class="top-bar" data-topbar>
-    <ul class="folders" data-bind="foreach: folders" >
-      <li data-bind="text: folders"></li>
+     <!-- Menu con botones -->
+    <ul class="menu">
+      <button data-bind="click: home">Home</button>
+      <button data-bind="click: formu">Nuevo Cliente</button>
+      <button data-bind="click: logIn">Log In</button>
     </ul>
-  </nav> -->
+
+      <!--   <nav class="top-bar" data-topbar>
+      <ul class="folders" data-bind="foreach: folders" >
+      <li data-bind="text: folders"></li>
+      </ul>
+      </nav> -->
 
 
-    <!-- Página principal -->
+      <!-- HOME -->
     <div data-bind="visible: pagina()== 'home'">
       <p>Esto es el menu</p>
       <button data-bind="click: formu">Ir al formulario</button>
     </div>
 
-    <!-- Página para introducir el TSI del cliente -->
+      <!-- NUEVO CLIENTE -->
     <div data-bind="visible: pagina()=='formulario' ">
       <form>
         <label>Introduzca a continuación el TSI del cliente: 
-          <input type="text" placeholder="TSI" />
-          <button data-bind="click: listaCliente">Aceptar</button>
+          <input data-bind="value: tsi" size="13"/>
+          <p align:"center">
+          <button style="text-align:center" data-bind="click: listaCliente">Aceptar</button>
+        </p>
         </label>
     </div>
 
-
-    <!-- Página que enseña los medicamentos recetados por el médico -->
-    <div data-bind="visible: pagina()=='listacliente'">
-      <p>Holi cliente</p>
+     <!-- LOG IN -->
+    <div data-bind="visible: pagina()=='login'">
+      <p>Login</p>
     </div>
 
+      <!-- RECETAS CLIENTE -->
+    <div data-bind="visible: pagina()=='listaCliente'">
+      <p>Holi cliente con TSI: <span data-bind="text: tsi"></span></p>
+      <button data-bind="click: resumen">Ir al resumen</button>
+    </div>
+
+      <!-- RESUMEN -->
+    <div class="large-9 columns">
+      <div data-bind="visible: pagina()=='resumen'">
+        <h3 style="text-align:center;">Resumen Medicamento</h3>
+        <label>TSI Cliente: 
+          <strong data-bind="text:tsi"></strong>
+        </label>
+        <label> Le ha atendido: <strong>Nombre farmacéutico</strong>
+        </label>
+        <label>Farmacia: <strong>Identificador farmacia</strong></label>
+        <label> Medicamento: <strong>Nombre del medicamento</strong>
+        </label>
+        <label>Fecha: <strong id="today"></strong>
+        </label> <p><p>
+        <label>Forma de pago:</label>
+          <select> 
+            <option value="efectivo">Efectivo</option>
+            <option value="tarjeta">Tarjeta</option>
+          </select>
+        
+        <label>Importe:</label> 
+          <div class="small-5 columns">
+            <div class="small-9 columns">
+              <input type="text" size="5"/>
+            </div>
+            <div class="small-3 columns">
+              <span class="postfix">€</span>
+            </div>
+          </div>
+        <p>holi</p>
+
+        <div>
+        <label>Forma de administración
+          <textarea placeholder="Introduzca cualquier comentario adicional"></textarea>
+        </label>
+        </div>
+        <label>Comentarios
+          <textarea placeholder="Introduzca cualquier comentario adicional"></textarea>
+        </label>
+
+        <button>Confirmar</button>
+      </div>
+    </div>
+  
+
+
   </div>
-
 </body>
-
 </html>
 
 
