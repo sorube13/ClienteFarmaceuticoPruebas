@@ -27,9 +27,9 @@
   <div class="grid flex">
     <h1 style="text-align:center;">Receta Farmaceútica</h1>
 
-      <!--   <ul class="folders" data-bind="foreach: folders">
-      <li><button data-bind="text: $data, click:formu"></button></li>
-      </ul> -->
+      <ul class="folders" data-bind="foreach: folders" >
+      <li><a data-bind="attr:{ 'href': '#' }, click: $root.prueba"><span data-bind="text: $data"></span></a></li>
+      </ul> 
   
      <!-- Menu con botones -->
     <ul class="menu">

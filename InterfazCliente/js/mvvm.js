@@ -19,6 +19,9 @@ function AppViewModel() {
     self.resumen = function(){
       self.pagina('resumen');
     };
+    self.prueba = function(){
+      console.log("Resumen!");
+    }
 
     var date = new Date();
     $('#today').html(date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear());
